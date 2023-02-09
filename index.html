@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ToDoList</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="style.css">
-        <title>ToDoList</title>
-    </head>
-
-    <body>
-        <!-- Header -->
-        <header class="header">
-            <h1 class="title">ToDoList</h1>
-            <section class="search-container">
-                <div class="search">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" class="search-input" placeholder="todo title...">
-                </div>
-                <select name="sort" class="sort">
-                    <option value="All">All</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Uncompleted">Uncompleted</option>
-                </select>
-            </section>
-        </header>
-        <!-- Content -->
-        <main class="content">
-            <!-- todos list -->
-            <ul class="todos-list">
-                <li class="todo">
-                    <input type="text" class="todo-title" value="test">
-                    <div class="todo-desc">
-                        <i class="fa-regular fa-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-
-                </li>
-                <li class="todo">
-                    <input type="text" class="todo-title" value="test">
-                    <div class="todo-desc">
-                        <i class="fa-regular fa-square"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
-                </li>
-            </ul>
-            <button class="add-todo-btn">Add New Todo</button>
-        </main>
-        <script src="app.js"></script>
-    </body>
-
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">ToDoList</h1>
+      <section class="search-container">
+        <div class="search">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" class="search-input" placeholder="todo title..." />
+        </div>
+        <select name="sort" class="sort">
+          <option value="All">All</option>
+          <option value="Completed">Completed</option>
+          <option value="Uncompleted">Uncompleted</option>
+        </select>
+      </section>
+    </header>
+    <!-- Content -->
+    <main class="content">
+      <!-- todos list -->
+      <ul class="todos-list"></ul>
+      <div class="add-todo-container">
+        <button class="add-todo-btn">
+          <i class="fa-solid fa-plus-circle"></i>
+        </button>
+        <input type="text" placeholder="Add New Todo" class="add-todo-input" />
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>
