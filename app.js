@@ -107,9 +107,18 @@ class App {
         todo.classList.remove('fa-square');
         todo.classList.add('fa-check-square');
       }
-
       // update LocalStorage:
       Storage.saveTodo(todos);
+    } else if (todo.classList.contains('todo-title')) {
+      todo.addEventListener('input', (e) => {
+        let todos = Storage.getTodos();
+        const changedTodo = todos.find(
+          (t) => t.id == e.target.nextElementSibling.dataset.id
+        );
+        changedTodo.title = e.target.value;
+        // update LocalStorage:
+        Storage.saveTodo(todos);
+      });
     }
   }
 }
