@@ -99,24 +99,24 @@ body {
     scrollbar-width: thin;
 }
 
-.cart::-webkit-scrollbar {
+.todos-list::-webkit-scrollbar {
     width: 3px;
 }
 
-.cart::-webkit-scrollbar-thumb {
+.todos-list::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 5px;
 }
 
-.cart::-webkit-scrollbar-button {
+.todos-list::-webkit-scrollbar-button {
     background-color: transparent;
 }
 
-.cart::-webkit-scrollbar-thumb:hover {
+.todos-list::-webkit-scrollbar-thumb:hover {
     background-color: #2564ebd1;
 }
 
-.cart::-webkit-scrollbar-thumb:active {
+.todos-list::-webkit-scrollbar-thumb:active {
     background-color: #2564ebd1;
 }
 
@@ -132,6 +132,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.complete {
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
 .todo input {
