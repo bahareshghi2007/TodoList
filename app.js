@@ -1,13 +1,20 @@
+// get Elements:
 const addTodoBtn = document.querySelector('.add-todo-btn');
 const todosContainer = document.querySelector('.todos-list');
 const addTodoInput = document.querySelector('.add-todo-input');
 const searchInput = document.querySelector('.search-input');
 const sortTodos = document.querySelector('.sort');
 
+// AddEventListeners:
 addTodoBtn.addEventListener('click', (e) => App.addTodo(e.target));
+addTodoInput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    App.addTodo(e.target.previousElementSibling);
+  }
+});
 searchInput.addEventListener('input', (e) => App.searchTodos(e.target));
 sortTodos.addEventListener('click', (e) => App.sortTodos(e.target));
-
 document.addEventListener('DOMContentLoaded', () => {
   const todos = Storage.getTodos();
   todos.forEach((todo) => {
@@ -101,7 +108,6 @@ class App {
       let selectedTodo = todos.find(
         (t) => t.id == todo.parentElement.dataset.id
       );
-      // todos.forEach((t) => console.log(t.id, todo.parentElement.dataset.id));
       if (selectedTodo.completed) {
         selectedTodo.completed = false;
         todo.parentElement.previousElementSibling.classList.remove('complete');
@@ -157,10 +163,14 @@ class App {
     });
     // update DOM:
     todosContainer.innerHTML = result;
+    document
+      .querySelector('.todo')
+      .addEventListener('click', (e) => this.todoLogic(e.target));
   }
 
   static sortTodos(e) {
     let result = '';
+    searchInput.value = '';
     const todos = Storage.getTodos();
     if (e.value == 'All') {
       todos.forEach((t) => {
@@ -204,6 +214,9 @@ class App {
       });
       // update DOM:
       todosContainer.innerHTML = result;
+      document
+        .querySelector('.todo')
+        .addEventListener('click', (e) => this.todoLogic(e.target));
     } else if (e.value == 'Uncompleted') {
       todos.forEach((t) => {
         if (t.completed == false) {
@@ -220,6 +233,9 @@ class App {
       });
       // update DOM:
       todosContainer.innerHTML = result;
+      document
+        .querySelector('.todo')
+        .addEventListener('click', (e) => this.todoLogic(e.target));
     }
   }
 

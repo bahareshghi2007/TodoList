@@ -148,6 +148,12 @@ body {
     color: var(--primary-color);
 }
 
+.todo-desc {
+    width: 20%;
+    display: flex;
+    justify-content: right;
+}
+
 .todo-desc .fa-trash {
     margin-left: 1.5rem;
     color: var(--main-red);
